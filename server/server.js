@@ -13,7 +13,7 @@ const { authMiddleware } = require('./utils/auth');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-async function runApolloServer() {
+
 const server = new ApolloServer({
   typeDefs,
   resolvers,
@@ -43,6 +43,6 @@ db.once('open', () => {
     console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
   });
  });
-}
+
 
 
