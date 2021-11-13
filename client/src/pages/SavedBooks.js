@@ -2,8 +2,12 @@ import React from 'react';
 import { Jumbotron, Container, CardColumns, Card, Button } from 'react-bootstrap';
 
 // import Auth from '../utils/auth';
+import Auth from '../utils/auth';
+
 import { removeBookId } from '../utils/localStorage';
+
 // import { getMe, deleteBook } from '../utils/API';
+import { getMe, deleteBook } from '../utils/API';
 
 import { useMutation, useQuery } from '@apollo/client'
 import{ QUERY_ME } from '../utils/queries'

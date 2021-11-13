@@ -1,16 +1,15 @@
 //Reference user-controller.js, book model, and user model.
-const { User, Book } = require('../models');
+const { User } = require('../models');
 const { findOneAndUpdate } = require('../models/User')
 
 const { AuthenticationError } = require('apollo-server-express');
-const { Profile } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
   Query: {
     me: async (parent, args, context) => {
       if (context.user) {
-        return Profile.findOne({ _id: context.user._id });
+        return User.findOne({ _id: context.user._id });
       }
       throw new AuthenticationError('You need to be logged in!');
     },
