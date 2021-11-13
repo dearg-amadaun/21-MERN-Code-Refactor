@@ -44,4 +44,3 @@ db.once('open', () => {
 }
 
 
-runApolloServer(typeDefs, resolvers);
